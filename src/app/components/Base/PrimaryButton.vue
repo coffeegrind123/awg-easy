@@ -2,7 +2,7 @@
   <component
     :is="elementType"
     role="button"
-    class="inline-flex items-center rounded border-2 border-red-800 bg-red-800 px-4 py-2 text-white transition hover:border-red-600 hover:bg-red-600"
+    :class="amneziaTheme.getThemeClass('inline-flex items-center rounded border-2 border-red-800 bg-red-800 px-4 py-2 text-white transition hover:border-red-600 hover:bg-red-600').value"
     v-bind="attrs"
   >
     <slot />
@@ -23,4 +23,6 @@ const attrs = computed(() => {
   const { as, ...attrs } = props;
   return attrs;
 });
+
+const amneziaTheme = useAmneziaTheme();
 </script>

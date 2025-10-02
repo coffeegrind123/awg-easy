@@ -3,6 +3,13 @@ export const useGlobalStore = defineStore('Global', () => {
     method: 'get',
   });
 
+  // Fetch AWG status from the interface endpoint
+  const { data: interfaceData } = useFetch('/api/admin/interface', {
+    method: 'get',
+  });
+
+  const isUsingAwg = computed(() => interfaceData.value?.isUsingAwg || false);
+
   const sortClient = ref(true); // Sort clients by name, true = asc, false = desc
 
   const uiShowCharts = useCookie<boolean>('uiShowCharts', {
@@ -22,6 +29,8 @@ export const useGlobalStore = defineStore('Global', () => {
   return {
     sortClient,
     information,
+    interfaceData,
+    isUsingAwg,
     uiShowCharts,
     toggleCharts,
     uiChartType,

@@ -19,9 +19,11 @@ toast.setToast(toastRef);
 // make sure to fetch release early
 useGlobalStore();
 
+const amneziaTheme = useAmneziaTheme();
+
 useHead({
   bodyAttrs: {
-    class: 'bg-gray-50 dark:bg-neutral-800',
+    class: amneziaTheme.getThemeClass('bg-gray-50 dark:bg-neutral-800'),
   },
   link: [
     {
@@ -30,12 +32,12 @@ useHead({
     },
     {
       rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png',
+      type: 'image/x-icon',
+      href: amneziaTheme.faviconPath,
     },
     {
       rel: 'apple-touch-icon',
-      href: '/apple-touch-icon.png',
+      href: amneziaTheme.appleTouchIconPath,
     },
   ],
   meta: [
@@ -52,6 +54,6 @@ useHead({
       content: 'black-translucent',
     },
   ],
-  title: 'WireGuard',
+  title: amneziaTheme.appTitle,
 });
 </script>
