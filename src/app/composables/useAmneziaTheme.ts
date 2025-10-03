@@ -14,15 +14,15 @@ export const useAmneziaTheme = () => {
 
   // Logo management
   const logoPath = computed(() => {
-    return globalStore.isUsingAwg ? '/logo.svg' : '/logo.png';
+    return globalStore.isUsingAwg ? '/logo-amnezia.svg' : '/logo.png';
   });
 
   const faviconPath = computed(() => {
-    return globalStore.isUsingAwg ? '/favicon.ico' : '/favicon.png';
+    return globalStore.isUsingAwg ? '/favicon-amnezia.ico' : '/favicon.png';
   });
 
   const appleTouchIconPath = computed(() => {
-    return globalStore.isUsingAwg ? '/apple-touch-icon.png' : '/apple-touch-icon-wg.png';
+    return globalStore.isUsingAwg ? '/apple-touch-icon-amnezia.png' : '/apple-touch-icon.png';
   });
 
   // Title management
