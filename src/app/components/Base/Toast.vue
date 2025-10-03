@@ -3,10 +3,10 @@
     v-for="(e, i) in count"
     :key="i"
     :class="[
-      `grid grid-cols-[auto_max-content] items-center gap-x-3 rounded-md p-3 text-neutral-200 shadow-lg [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)]`,
+      amneziaTheme.getThemeClass(`grid grid-cols-[auto_max-content] items-center gap-x-3 rounded-md p-3 text-neutral-200 shadow-lg [grid-template-areas:_'title_action'_'description_action'] data-[swipe=cancel]:translate-x-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)]`).value,
       {
         'bg-green-800': e.type === 'success',
-        'bg-red-800': e.type === 'error',
+        [amneziaTheme.getThemeClass('bg-red-800').value]: e.type === 'error',
       },
     ]"
   >
@@ -43,4 +43,6 @@ const count = reactive<ToastParams[]>([]);
 function publish(e: ToastParams) {
   count.push({ type: e.type, title: e.title, message: e.message });
 }
+
+const amneziaTheme = useAmneziaTheme();
 </script>

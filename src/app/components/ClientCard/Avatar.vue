@@ -14,10 +14,10 @@
       "
     >
       <div
-        class="absolute -bottom-1 -right-1 h-4 w-4 animate-ping rounded-full bg-red-100 p-1 dark:bg-red-100"
+        :class="amneziaTheme.getThemeClass('absolute -bottom-1 -right-1 h-4 w-4 animate-ping rounded-full bg-red-100 p-1 dark:bg-red-100').value"
       />
       <div
-        class="absolute bottom-0 right-0 h-2 w-2 rounded-full bg-red-800 dark:bg-red-600"
+        :class="amneziaTheme.getThemeClass('absolute bottom-0 right-0 h-2 w-2 rounded-full bg-red-800 dark:bg-red-600').value"
       />
     </div>
   </div>
@@ -27,4 +27,6 @@
 defineProps<{
   client: LocalClient;
 }>();
+
+const amneziaTheme = useAmneziaTheme();
 </script>
