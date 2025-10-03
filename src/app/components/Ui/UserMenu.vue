@@ -2,7 +2,7 @@
   <DropdownMenuRoot v-model:open="toggleState">
     <DropdownMenuTrigger>
       <span
-        class="flex items-center rounded-full pe-1 text-sm font-medium text-gray-400 hover:text-red-800 focus:ring-4 focus:ring-gray-100 md:me-0 dark:text-neutral-400 dark:hover:text-red-800 dark:focus:ring-gray-700"
+        :class="amneziaTheme.getThemeClass('flex items-center rounded-full pe-1 text-sm font-medium text-gray-400 hover:text-red-800 focus:ring-4 focus:ring-gray-100 md:me-0 dark:text-neutral-400 dark:hover:text-red-800 dark:focus:ring-gray-700').value"
       >
         <BaseAvatar class="h-8 w-8">
           {{ fallbackName }}
@@ -14,7 +14,7 @@
     <DropdownMenuPortal>
       <DropdownMenuContent
         :side-offset="5"
-        class="z-10 w-44 divide-y divide-gray-100 rounded-lg bg-white text-gray-700 shadow dark:divide-neutral-800 dark:bg-neutral-700 dark:text-gray-200"
+        :class="amneziaTheme.getThemeClass('z-10 w-44 divide-y divide-gray-100 rounded-lg bg-white text-gray-700 shadow dark:divide-neutral-800 dark:bg-neutral-700 dark:text-gray-200').value"
       >
         <DropdownMenuItem>
           <div class="px-4 py-2">
@@ -93,4 +93,6 @@ const fallbackName = computed(() => {
     .slice(0, 2)
     .join('');
 });
+
+const amneziaTheme = useAmneziaTheme();
 </script>
