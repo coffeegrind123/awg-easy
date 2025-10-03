@@ -12,7 +12,8 @@ You have found the easiest way to install & manage AmneziaWG on any Linux host!
 <!-- TOOD: update screenshot -->
 
 <p align="center">
-  <img src="./assets/screenshot.png" width="802" alt="wg-easy Screenshot" />
+  <img src="./assets/screenshot.png" width="802" alt="awg-easy Screenshot" />
+  <img src="./assets/screenshot2.png" width="802" alt="awg-easy Screenshot 2" />
 </p>
 
 ## Features
