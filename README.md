@@ -1,13 +1,13 @@
-# WireGuard Easy
+# AmneziaWG Easy
 
-[![Build & Publish latest Image](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/wg-easy/wg-easy/actions/workflows/deploy.yml)
-[![Lint](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/wg-easy/wg-easy/actions/workflows/lint.yml)
-[![GitHub Stars](https://img.shields.io/github/stars/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/stargazers)
-[![License](https://img.shields.io/github/license/wg-easy/wg-easy)](LICENSE)
-[![GitHub Release](https://img.shields.io/github/v/release/wg-easy/wg-easy)](https://github.com/wg-easy/wg-easy/releases/latest)
-[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/wg-easy/wg-easy/pkgs/container/wg-easy)
+[![Build & Publish latest Image](https://github.com/coffeegrind123/awg-easy/actions/workflows/deploy.yml/badge.svg?branch=production)](https://github.com/coffeegrind123/awg-easy/actions/workflows/deploy.yml)
+[![Lint](https://github.com/coffeegrind123/awg-easy/actions/workflows/lint.yml/badge.svg?branch=master)](https://github.com/coffeegrind123/awg-easy/actions/workflows/lint.yml)
+[![GitHub Stars](https://img.shields.io/github/stars/coffeegrind123/awg-easy)](https://github.com/coffeegrind123/awg-easy/stargazers)
+[![License](https://img.shields.io/github/license/coffeegrind123/awg-easy)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/coffeegrind123/awg-easy)](https://github.com/coffeegrind123/awg-easy/releases/latest)
+[![Image Pulls](https://img.shields.io/badge/image_pulls-12M+-blue)](https://github.com/coffeegrind123/awg-easy/pkgs/container/wg-easy)
 
-You have found the easiest way to install & manage WireGuard on any Linux host!
+You have found the easiest way to install & manage AmneziaWG on any Linux host!
 
 <!-- TOOD: update screenshot -->
 
@@ -17,7 +17,7 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 ## Features
 
-- All-in-one: WireGuard + Web UI.
+- All-in-one: AmneziaWG + Web UI.
 - Easy installation, simple to use.
 - List, create, edit, delete, enable & disable clients.
 - Show a client's QR code.
@@ -49,7 +49,7 @@ You have found the easiest way to install & manage WireGuard on any Linux host!
 
 ## Installation
 
-This is a quick start guide to get you up and running with WireGuard Easy.
+This is a quick start guide to get you up and running with AmneziaWG Easy.
 
 For a more detailed installation guide, please refer to the [Getting Started](https://wg-easy.github.io/wg-easy/latest/getting-started/) page.
 
@@ -64,13 +64,13 @@ exit
 
 And log in again.
 
-### 2. Run WireGuard Easy
+### 2. Run AmneziaWG Easy
 
-The easiest way to run WireGuard Easy is with Docker Compose.
+The easiest way to run AmneziaWG Easy is with Docker Compose.
 
 Just follow [these steps](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/) in the detailed documentation.
 
-You can also install WireGuard Easy with the [docker run command](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/).
+You can also install AmneziaWG Easy with the [docker run command](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/docker-run/) or via [podman](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/podman-nft/).
 
 Now [setup a reverse proxy](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/basic-installation/#setup-reverse-proxy) to be able to access the Web UI securely from the internet. This step is optional, just make sure to follow the guide [here](https://wg-easy.github.io/wg-easy/latest/examples/tutorials/reverse-proxyless/) if you decide not to do it.
 
