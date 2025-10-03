@@ -1,7 +1,7 @@
 <template>
   <SelectRoot v-model="langProxy" :default-value="locale">
     <SelectTrigger
-      class="inline-flex h-8 items-center justify-around gap-2 rounded bg-gray-200 px-3 text-sm leading-none dark:bg-neutral-700 dark:text-neutral-400"
+      :class="amneziaTheme.getThemeClass('inline-flex h-8 items-center justify-around gap-2 rounded bg-gray-200 px-3 text-sm leading-none dark:bg-neutral-700 dark:text-neutral-400').value"
       aria-label="Select language"
     >
       <IconsLanguage class="size-3" />
@@ -11,7 +11,7 @@
 
     <SelectPortal>
       <SelectContent
-        class="min-w-28 rounded bg-gray-300 dark:bg-neutral-500"
+        :class="amneziaTheme.getThemeClass('min-w-28 rounded bg-gray-300 dark:bg-neutral-500').value"
         position="popper"
       >
         <SelectViewport class="p-2">
@@ -19,7 +19,7 @@
             v-for="(option, index) in langs"
             :key="index"
             :value="option.code"
-            class="relative flex h-6 items-center rounded px-3 text-sm leading-none outline-none hover:bg-red-800 hover:text-white data-[state=checked]:underline dark:text-white"
+            :class="amneziaTheme.getThemeClass('relative flex h-6 items-center rounded px-3 text-sm leading-none outline-none hover:bg-red-800 hover:text-white data-[state=checked]:underline dark:text-white').value"
           >
             <SelectItemText>
               {{ option.name }}
@@ -41,4 +41,6 @@ watchEffect(() => {
 });
 
 const langs = locales.value.sort((a, b) => a.code.localeCompare(b.code));
+
+const amneziaTheme = useAmneziaTheme();
 </script>
