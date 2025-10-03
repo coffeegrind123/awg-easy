@@ -45,6 +45,11 @@ export const useAmneziaTheme = () => {
           .replace(/dark:bg-neutral-500\b/g, 'dark:bg-amnezia-bg-elevated')
           .replace(/dark:bg-neutral-400\b/g, 'dark:bg-amnezia-bg-elevated')
 
+          // Text colors (light mode)
+          .replace(/\btext-gray-700\b/g, 'text-amnezia-text-primary')
+          .replace(/\btext-gray-900\b/g, 'text-amnezia-text-primary')
+          .replace(/\btext-black\b/g, 'text-amnezia-text-primary')
+
           // Text colors (dark mode)
           .replace(/dark:text-neutral-200\b/g, 'dark:text-amnezia-text-primary')
           .replace(/dark:text-neutral-300\b/g, 'dark:text-amnezia-text-muted')
@@ -56,8 +61,10 @@ export const useAmneziaTheme = () => {
 
           // Accent colors (both light and dark mode)
           .replace(/hover:bg-red-800\b/g, 'hover:bg-amnezia-accent')
+          .replace(/hover:bg-red-700\b/g, 'hover:bg-amnezia-accent')
           .replace(/border-red-800\b/g, 'border-amnezia-accent')
           .replace(/bg-red-800\b/g, 'bg-amnezia-accent')
+          .replace(/bg-red-700\b/g, 'bg-amnezia-accent')
           .replace(/text-red-800\b/g, 'text-amnezia-accent')
           .replace(/focus:border-red-800\b/g, 'focus:border-amnezia-accent')
           .replace(/hover:border-red-800\b/g, 'hover:border-amnezia-accent')
@@ -69,7 +76,9 @@ export const useAmneziaTheme = () => {
 
           // Special cases for dark mode
           .replace(/dark:hover:bg-red-800\b/g, 'dark:hover:bg-amnezia-accent')
+          .replace(/dark:hover:bg-red-700\b/g, 'dark:hover:bg-amnezia-accent')
           .replace(/dark:bg-red-800\b/g, 'dark:bg-amnezia-accent')
+          .replace(/dark:bg-red-700\b/g, 'dark:bg-amnezia-accent')
           .replace(/dark:hover:bg-red-600\b/g, 'dark:hover:bg-amnezia-accent-dark')
           .replace(/dark:bg-red-600\b/g, 'dark:bg-amnezia-accent-dark');
       }
