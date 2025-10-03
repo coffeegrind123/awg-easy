@@ -27,6 +27,11 @@ export default defineNuxtConfig({
     // experimental: {
     //   localeDetector: './localeDetector.ts',
     // },
+    // Disable compilation to prevent build-time locale merging issues
+    compilation: {
+      strictMessage: false,
+      escapeHtml: false,
+    },
     // https://wg-easy.github.io/wg-easy/latest/contributing/translation/
     locales: [
       {

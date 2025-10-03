@@ -22,6 +22,10 @@ export default defineI18nConfig(() => ({
   silentFallbackWarn: true,
   // Use shallow merging to avoid deepCopy issues
   mergeFallbackMessage: true,
+  // Prevent deepCopy errors by disabling complex locale operations
+  postProcessing: false,
+  // Use shallow merging to avoid deepCopy issues with complex objects
+  inheritLocale: false,
   messages: {
     en,
     pl,
