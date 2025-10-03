@@ -173,7 +173,7 @@
       "restartWarn": "Arayüzü yeniden başlatmak istediğinizden emin misiniz? Bu tüm istemcilerin bağlantısını kesecektir.",
       "restartSuccess": "Arayüz yeniden başlatıldı"
     },
-    "introText": "Yönetici paneline hoş geldiniz.\\n\\nBurada genel ayarları, yapılandırmayı, arayüz ayarlarını ve hook'ları yönetebilirsiniz.\\n\\nKenar çubuğundaki bölümlerden birini seçerek başlayın."
+    "introText": "Yönetici paneline hoş geldiniz.\n\nBurada genel ayarları, yapılandırmayı, arayüz ayarlarını ve hook'ları yönetebilirsiniz.\n\nKenar çubuğundaki bölümlerden birini seçerek başlayın."
   },
   "zod": {
     "generic": {
