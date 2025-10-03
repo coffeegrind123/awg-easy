@@ -170,7 +170,7 @@
       "restartWarn": "Sind Sie sicher, dass Sie das Interface neu starten wollen? Dies wird die Verbindungen aller Clients trennen.",
       "restartSuccess": "Interface neu gestartet"
     },
-    "introText": "Willkommen in der Admin-Konsole.\n\nHier können Sie die allgemeinen Einstellungen, die Konfiguration, die Schnittstelleneinstellungen und die Hooks verwalten.\n\nBeginnen Sie, indem Sie einen der Bereiche in der Seitenleiste auswählen."
+    "introText": "Willkommen in der Admin-Konsole.\\n\\nHier können Sie die allgemeinen Einstellungen, die Konfiguration, die Schnittstelleneinstellungen und die Hooks verwalten.\\n\\nBeginnen Sie, indem Sie einen der Bereiche in der Seitenleiste auswählen."
   },
   "zod": {
     "generic": {

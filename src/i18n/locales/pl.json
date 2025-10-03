@@ -173,7 +173,7 @@
       "restartWarn": "Czy na pewno chcesz zrestartować interfejs? Wszyscy klienci zostaną rozłączeni.",
       "restartSuccess": "Interfejs zrestartowany"
     },
-    "introText": "Witamy w panelu administracyjnym.\n\nTutaj możesz zarządzać ustawieniami ogólnymi, konfiguracją, interfejsem i hookami.\n\nZacznij od wybrania jednej z sekcji w pasku bocznym."
+    "introText": "Witamy w panelu administracyjnym.\\n\\nTutaj możesz zarządzać ustawieniami ogólnymi, konfiguracją, interfejsem i hookami.\\n\\nZacznij od wybrania jednej z sekcji w pasku bocznym."
   },
   "zod": {
     "generic": {

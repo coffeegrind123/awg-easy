@@ -173,7 +173,7 @@
       "restartWarn": "Apakah Anda yakin ingin memulai ulang antarmuka? Ini akan membuat semua klien menjadi terputus.",
       "restartSuccess": "Antarmuka telah dimulai ulang."
     },
-    "introText": "Selamat datang di panel admin.\n\nDi sini Anda dapat mengelola pengaturan umum, konfigurasi, pengaturan antarmuka, dan hooks.\n\nMulailah dengan memilih salah satu bagian di bilah samping."
+    "introText": "Selamat datang di panel admin.\\n\\nDi sini Anda dapat mengelola pengaturan umum, konfigurasi, pengaturan antarmuka, dan hooks.\\n\\nMulailah dengan memilih salah satu bagian di bilah samping."
   },
   "zod": {
     "generic": {

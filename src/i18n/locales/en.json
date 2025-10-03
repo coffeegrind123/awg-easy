@@ -173,7 +173,7 @@
       "restartWarn": "Are you sure to restart the interface? This will disconnect all clients.",
       "restartSuccess": "Interface restarted"
     },
-    "introText": "Welcome to the admin panel.\n\nHere you can manage the general settings, the configuration, the interface settings and the hooks.\n\nStart by choosing one of the sections in the sidebar."
+    "introText": "Welcome to the admin panel.\\n\\nHere you can manage the general settings, the configuration, the interface settings and the hooks.\\n\\nStart by choosing one of the sections in the sidebar."
   },
   "zod": {
     "generic": {

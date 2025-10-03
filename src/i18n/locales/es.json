@@ -173,7 +173,7 @@
       "restartWarn": "¿Estás seguro de reiniciar la interfaz? Esto desconectará a todos los clientes.",
       "restartSuccess": "Interfaz reiniciada"
     },
-    "introText": "Bienvenido al panel de administración.\n\nAquí puedes gestionar los ajustes generales, la configuración, la interfaz y los hooks.\n\nEmpieza eligiendo una de las secciones en la barra lateral."
+    "introText": "Bienvenido al panel de administración.\\n\\nAquí puedes gestionar los ajustes generales, la configuración, la interfaz y los hooks.\\n\\nEmpieza eligiendo una de las secciones en la barra lateral."
   },
   "zod": {
     "generic": {
