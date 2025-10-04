@@ -22,6 +22,8 @@ You have found the easiest way to install & manage AmneziaWG on any Linux host!
 - Adaptive UI theme that detects AmneziaWG vs WireGuard and switches branding accordingly
 - Automatic fallback to standard WireGuard when AmneziaWG kernel module is not available
 
+This project is a fork of [wg-easy](https://github.com/wg-easy/wg-easy)
+
 ## Features
 - All-in-one: AmneziaWG + Web UI.
 - Easy installation, simple to use.
