@@ -18,6 +18,13 @@ You have found the easiest way to install & manage AmneziaWG on any Linux host!
 
 ## Features
 
+### NEW: AmneziaWG Support
+
+- AmneziaWG obfuscation parameters support (Jc, Jmin, Jmax, S1-S4, H1-H4, I1-I5, J1-J3, Itime)
+- Parameter constraints validation and random generation on first run
+- Adaptive UI theme that detects AWG vs WireGuard and switches branding accordingly
+- Automatic fallback to standard WireGuard when AmneziaWG is not available
+
 - All-in-one: AmneziaWG + Web UI.
 - Easy installation, simple to use.
 - List, create, edit, delete, enable & disable clients.
