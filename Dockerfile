@@ -1,4 +1,4 @@
-FROM docker.io/library/node:lts-alpine AS build
+FROM docker.io/library/node:jod-alpine AS build
 WORKDIR /app
 
 # update corepack
@@ -59,7 +59,7 @@ RUN mkdir -p /build/module && \
 
 # Copy build result to a new image.
 # This saves a lot of disk space.
-FROM docker.io/library/node:lts-alpine
+FROM docker.io/library/node:jod-alpine
 WORKDIR /app
 
 HEALTHCHECK --interval=1m --timeout=5s --retries=3 CMD /usr/bin/timeout 5s /bin/sh -c "/usr/bin/wg show | /bin/grep -q interface || exit 1"
