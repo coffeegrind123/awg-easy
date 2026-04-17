@@ -34,8 +34,19 @@ export const client = sqliteTable('clients_table', {
   serverAllowedIps: text('server_allowed_ips', { mode: 'json' })
     .$type<string[]>()
     .notNull(),
+  // Firewall-enforced allowed IPs (null = use allowedIps)
+  firewallIps: text('firewall_ips', { mode: 'json' }).$type<string[] | null>(),
   persistentKeepalive: int('persistent_keepalive').notNull(),
   mtu: int().notNull(),
+  // AmneziaWG parameters (optional)
+  jC: int('j_c'),
+  jMin: int('j_min'),
+  jMax: int('j_max'),
+  i1: text(),
+  i2: text(),
+  i3: text(),
+  i4: text(),
+  i5: text(),
   dns: text({ mode: 'json' }).$type<string[]>(),
   serverEndpoint: text('server_endpoint'),
   enabled: int({ mode: 'boolean' }).notNull(),

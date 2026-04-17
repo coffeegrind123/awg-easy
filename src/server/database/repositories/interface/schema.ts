@@ -39,6 +39,12 @@ export const wgInterface = sqliteTable('interfaces_table', {
   j2: text().notNull().default(''),   // Junk packet schedule 2
   j3: text().notNull().default(''),   // Junk packet schedule 3
   itime: int().notNull().default(0),  // Interval time
+  // does nothing yet
+  enabled: int({ mode: 'boolean' }).notNull(),
+  // Enable per-client firewall filtering via iptables
+  firewallEnabled: int('firewall_enabled', { mode: 'boolean' })
+    .notNull()
+    .default(true),  // Enable by default per user preference
   createdAt: text('created_at')
     .notNull()
     .default(sql`(CURRENT_TIMESTAMP)`),
