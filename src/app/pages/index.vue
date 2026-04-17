@@ -2,11 +2,15 @@
   <main>
     <Panel>
       <PanelHead>
-        <PanelHeadTitle :text="$t('pages.clients')" />
+        <PanelHeadTitle>
+          {{ $t('pages.clients') }}
+        </PanelHeadTitle>
         <PanelHeadBoat>
           <ClientsSearch />
-          <ClientsSort />
-          <ClientsNew />
+          <div class="flex gap-2">
+            <ClientsSort />
+            <ClientsNew />
+          </div>
         </PanelHeadBoat>
       </PanelHead>
 
@@ -29,9 +33,6 @@
 </template>
 
 <script setup lang="ts">
-const authStore = useAuthStore();
-authStore.update();
-
 const globalStore = useGlobalStore();
 const clientsStore = useClientsStore();
 

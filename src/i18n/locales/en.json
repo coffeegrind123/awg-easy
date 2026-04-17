@@ -88,6 +88,7 @@
     "name": "Name",
     "expireDate": "Expire Date",
     "expireDateDesc": "Date the client will be disabled. Blank for permanent",
+    "delete": "Delete",
     "deleteClient": "Delete Client",
     "deleteDialog1": "Are you sure you want to delete",
     "deleteDialog2": "This action cannot be undone.",
@@ -117,7 +118,13 @@
     "notConnected": "Client not connected",
     "endpoint": "Endpoint",
     "endpointDesc": "IP of the client from which the WireGuard connection is established",
-    "search": "Search clients..."
+    "search": "Search clients...",
+    "config": "Configuration",
+    "viewConfig": "View Configuration",
+    "firewallIps": "Firewall Allowed IPs",
+    "firewallIpsDesc": "Destination IPs/CIDRs this client can access (server-side enforcement). Leave empty to use Allowed IPs. Supports optional port and protocol filtering. See docs for syntax.",
+    "downloadPng": "Download PNG",
+    "copyPng": "Copy PNG"
   },
   "dialog": {
     "change": "Change",
@@ -127,7 +134,8 @@
   "toast": {
     "success": "Success",
     "saved": "Saved",
-    "error": "Error"
+    "error": "Error",
+    "unknown": "Unknown error. See console for more details"
   },
   "form": {
     "actions": "Actions",
@@ -172,7 +180,10 @@
       "restart": "Restart Interface",
       "restartDesc": "Restart the WireGuard interface",
       "restartWarn": "Are you sure to restart the interface? This will disconnect all clients.",
-      "restartSuccess": "Interface restarted"
+      "restartSuccess": "Interface restarted",
+      "firewall": "Traffic Filtering",
+      "firewallEnabled": "Enable Per-Client Firewall",
+      "firewallEnabledDesc": "Restrict client traffic to specific destination IPs using iptables. When enabled, each client can be configured with allowed destinations."
     },
     "introText": "Welcome to the admin panel.\n\nHere you can manage the general settings, the configuration, the interface settings and the hooks.\n\nStart by choosing one of the sections in the sidebar."
   },
@@ -180,6 +191,7 @@
     "generic": {
       "required": "{0} is required",
       "validNumber": "{0} must be a valid number",
+      "validNumberRange": "{0} must be a valid number or number range",
       "validString": "{0} must be a valid string",
       "validBoolean": "{0} must be a valid boolean",
       "validArray": "{0} must be a valid array",
@@ -192,7 +204,9 @@
       "expiresAt": "Expires At",
       "address4": "IPv4 Address",
       "address6": "IPv6 Address",
-      "serverAllowedIps": "Server Allowed IPs"
+      "serverAllowedIps": "Server Allowed IPs",
+      "firewallIps": "Firewall Allowed IPs",
+      "firewallIpsInvalid": "Invalid firewall IP entry. See docs for supported syntax."
     },
     "user": {
       "username": "Username",
@@ -237,5 +251,47 @@
     "postUp": "PostUp",
     "preDown": "PreDown",
     "postDown": "PostDown"
+  },
+  "copy": {
+    "notSupported": "Copy is not supported",
+    "copied": "Copied!",
+    "failed": "Copy failed",
+    "copy": "Copy"
+  },
+  "awg": {
+    "jCLabel": "Junk packet count (Jc)",
+    "jCDescription": "Number of junk packets to send (1-128, recommended: 4-12)",
+    "jMinLabel": "Junk packet min size (Jmin)",
+    "jMinDescription": "Minimum size of junk packets (0-1279*, recommended: 8, must be < Jmax)",
+    "jMaxLabel": "Junk packet max size (Jmax)",
+    "jMaxDescription": "Maximum size of junk packets (1-1280*, recommended: 80, must be > Jmin)",
+    "s1Label": "Init packet junk size (S1)",
+    "s1Description": "Init packet junk size (0-1132[1280* - 148 = 1132], recommended: 15-150, S1+56 ≠ S2)",
+    "s2Label": "Response packet junk size (S2)",
+    "s2Description": "Response packet junk size (0-1188[1280* - 92 = 1188], recommended: 15-150)",
+    "s3Label": "Cookie reply packet junk size (S3)",
+    "s3Description": "Cookie reply packet junk size",
+    "s4Label": "Transport packet junk size (S4)",
+    "s4Description": "Transport packet junk size",
+    "h1Label": "Init magic header (H1)",
+    "h1Description": "Init packet header value or range (X or X-Y, where X<Y. Min 5, max 2147483647. Value or range must not overlap with other headers)",
+    "h2Label": "Response magic header (H2)",
+    "h2Description": "Response packet header value or range (X or X-Y, where X<Y. Min 5, max 2147483647. Value or range must not overlap with other headers)",
+    "h3Label": "Cookie reply magic header (H3)",
+    "h3Description": "Cookie reply packet header value or range (X or X-Y, where X<Y. Min 5, max 2147483647. Value or range must not overlap with other headers)",
+    "h4Label": "Transport magic header (H4)",
+    "h4Description": "Transport packet header value or range (X or X-Y, where X<Y. Min 5, max 2147483647. Value or range must not overlap with other headers)",
+    "i1Label": "Special junk packet 1 (I1)",
+    "i1Description": "Protocol mimic packet in hex format: <b 0x...>",
+    "i2Label": "Special junk packet 2 (I2)",
+    "i2Description": "Protocol mimic packet in hex format: <b 0x...>",
+    "i3Label": "Special junk packet 3 (I3)",
+    "i3Description": "Protocol mimic packet in hex format: <b 0x...>",
+    "i4Label": "Special junk packet 4 (I4)",
+    "i4Description": "Protocol mimic packet in hex format: <b 0x...>",
+    "i5Label": "Special junk packet 5 (I5)",
+    "i5Description": "Protocol mimic packet in hex format: <b 0x...>",
+    "mtuNote": "Values depend on the MTU",
+    "obfuscationParameters": "AmneziaWG Obfuscation Parameters"
   }
 }

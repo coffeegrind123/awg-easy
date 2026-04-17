@@ -7,12 +7,19 @@ import it from './locales/it.json';
 import ru from './locales/ru.json';
 import zhhk from './locales/zh-HK.json';
 import zhcn from './locales/zh-CN.json';
+import zhtw from './locales/zh-TW.json';
 import ko from './locales/ko.json';
 import es from './locales/es.json';
 import ptbr from './locales/pt-BR.json';
 import tr from './locales/tr.json';
 import bn from './locales/bn.json';
 import id from './locales/id.json';
+import nl from './locales/nl.json';
+import nb from './locales/nb.json';
+import bg from './locales/bg.json';
+import gl from './locales/gl.json';
+import cs from './locales/cs.json';
+import vi from './locales/vi.json';
 
 export default defineI18nConfig(() => ({
   legacy: false,
@@ -36,11 +43,18 @@ export default defineI18nConfig(() => ({
     ru,
     'zh-HK': zhhk,
     'zh-CN': zhcn,
+    'zh-TW': zhtw,
     ko,
     es,
     'pt-BR': ptbr,
     tr,
     bn,
     id,
+    nl,
+    nb,
+    bg,
+    gl,
+    cs,
+    vi,
   },
 }));

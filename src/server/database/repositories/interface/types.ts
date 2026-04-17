@@ -41,98 +41,26 @@ export const InterfaceUpdateSchema = schemaForType<InterfaceUpdateType>()(
     ipv4Cidr: cidr,
     ipv6Cidr: cidr,
     mtu: MtuSchema,
+    jC: JcSchema,
+    jMin: JminSchema,
+    jMax: JmaxSchema,
+    s1: SSchema,
+    s2: SSchema,
+    s3: SSchema,
+    s4: SSchema,
+    h1: HSchema,
+    h2: HSchema,
+    h3: HSchema,
+    h4: HSchema,
+    i1: ISchema,
+    i2: ISchema,
+    i3: ISchema,
+    i4: ISchema,
+    i5: ISchema,
     port: PortSchema,
     device: device,
     enabled: EnabledSchema,
-    // AmneziaWG obfuscation parameters
-    // Constraints based on Amnezia documentation:
-    // Jc: 1 ≤ Jc ≤ 128 (recommended 4-12)
-    // Jmin: Jmax > Jmin < 1280 (recommended 8)
-    // Jmax: Jmin < Jmax ≤ 1280 (recommended 80)
-    // S1: S1 ≤ 1132, S1 + 56 ≠ S2 (recommended 15-150)
-    // S2: S2 ≤ 1188 (recommended 15-150)
-    // H1-H4: > 4 and unique (recommended 5 to 2147483647)
-    jc: z
-      .number()
-      .int()
-      .min(1, { message: 'Jc must be between 1 and 128' })
-      .max(128, { message: 'Jc must be between 1 and 128' }),
-    jmin: z
-      .number()
-      .int()
-      .min(0, { message: 'Jmin must be between 0 and 1279' })
-      .max(MTU - 1, { message: `Jmin must be between 0 and ${MTU - 1}` }),
-    jmax: z
-      .number()
-      .int()
-      .min(1, { message: `Jmax must be between 1 and ${MTU}` })
-      .max(MTU, { message: `Jmax must be between 1 and ${MTU}` }),
-    s1: z
-      .number()
-      .int()
-      .min(0, { message: `S1 must be between 0 and ${S1_MAX_MTU}` })
-      .max(S1_MAX_MTU, {
-        message: `S1 must be between 0 and ${S1_MAX_MTU}`,
-      }),
-    s2: z
-      .number()
-      .int()
-      .min(0, { message: `S2 must be between 0 and ${S2_MAX_MTU}` })
-      .max(S2_MAX_MTU, {
-        message: `S2 must be between 0 and ${S2_MAX_MTU}`,
-      }),
-    // Magic headers must be > 4 to enable obfuscation
-    h1: z
-      .number()
-      .int()
-      .min(5, { message: 'H1 must be > 4 to enable obfuscation' })
-      .max(0xffffffff, { message: 'H1 must be a valid uint32' }),
-    h2: z
-      .number()
-      .int()
-      .min(5, { message: 'H2 must be > 4 to enable obfuscation' })
-      .max(0xffffffff, { message: 'H2 must be a valid uint32' }),
-    h3: z
-      .number()
-      .int()
-      .min(5, { message: 'H3 must be > 4 to enable obfuscation' })
-      .max(0xffffffff, { message: 'H3 must be a valid uint32' }),
-    h4: z
-      .number()
-      .int()
-      .min(5, { message: 'H4 must be > 4 to enable obfuscation' })
-      .max(0xffffffff, { message: 'H4 must be a valid uint32' }),
-    // AmneziaWG 1.5 parameters
-    s3: z
-      .number()
-      .int()
-      .min(0, { message: `S3 must be between 0 and ${S1_MAX_MTU}` })
-      .max(S1_MAX_MTU, {
-        message: `S3 must be between 0 and ${S1_MAX_MTU}`,
-      }),
-    s4: z
-      .number()
-      .int()
-      .min(0, { message: `S4 must be between 0 and ${S2_MAX_MTU}` })
-      .max(S2_MAX_MTU, {
-        message: `S4 must be between 0 and ${S2_MAX_MTU}`,
-      }),
-    // I1-I5: Special junk packets (hex format like <b 0x...>)
-    i1: z.string().max(10000, { message: 'I1 packet too large (max 10000 chars)' }),
-    i2: z.string().max(10000, { message: 'I2 packet too large (max 10000 chars)' }),
-    i3: z.string().max(10000, { message: 'I3 packet too large (max 10000 chars)' }),
-    i4: z.string().max(10000, { message: 'I4 packet too large (max 10000 chars)' }),
-    i5: z.string().max(10000, { message: 'I5 packet too large (max 10000 chars)' }),
-    // J1-J3: Junk packet scheduling
-    j1: z.string().max(1000, { message: 'J1 too large (max 1000 chars)' }),
-    j2: z.string().max(1000, { message: 'J2 too large (max 1000 chars)' }),
-    j3: z.string().max(1000, { message: 'J3 too large (max 1000 chars)' }),
-    // Itime: Interval time (0-2147483647)
-    itime: z
-      .number()
-      .int()
-      .min(0, { message: 'Itime must be >= 0' })
-      .max(2147483647, { message: 'Itime must be <= 2147483647' }),
+    firewallEnabled: EnabledSchema,
   })
     .refine((data) => data.jmax > data.jmin, {
       message: 'Jmax must be > Jmin',

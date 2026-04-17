@@ -41,6 +41,7 @@ This project is a fork of [wg-easy](https://github.com/wg-easy/wg-easy)
 - IPv6 support
 - CIDR support
 - 2FA support
+- Per-client firewall filtering (requires iptables)
 
 > [!NOTE]
 > To better manage documentation for this project, it has its own site here: [https://wg-easy.github.io/wg-easy/latest](https://wg-easy.github.io/wg-easy/latest)

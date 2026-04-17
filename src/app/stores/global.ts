@@ -1,7 +1,10 @@
 export const useGlobalStore = defineStore('Global', () => {
-  const { data: information } = useFetch('/api/information', {
-    method: 'get',
-  });
+  const { data: information, refresh: refreshInformation } = useFetch(
+    '/api/information',
+    {
+      method: 'get',
+    }
+  );
 
   // Fetch AWG status from the public interface endpoint
   const { data: interfaceData } = useFetch('/api/interface', {
@@ -30,8 +33,7 @@ export const useGlobalStore = defineStore('Global', () => {
   return {
     sortClient,
     information,
-    interfaceData,
-    isUsingAwg,
+    refreshInformation,
     uiShowCharts,
     toggleCharts,
     uiChartType,

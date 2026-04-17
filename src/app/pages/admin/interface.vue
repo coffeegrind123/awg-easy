@@ -21,135 +21,116 @@
           :description="$t('admin.interface.deviceDesc')"
         />
       </FormGroup>
-      <FormGroup v-if="!data.isUsingAwg">
-        <FormHeading>AmneziaWG</FormHeading>
-        <p class="text-sm text-muted-foreground col-span-2">
-          AmneziaWG obfuscation is not currently active. To enable it, set
-          <code class="bg-muted px-1 py-0.5 rounded">EXPERIMENTAL_AWG=true</code>
-          and ensure the amneziawg kernel module is available.
-        </p>
-      </FormGroup>
-      <FormGroup v-if="data.isUsingAwg">
-        <FormHeading>AmneziaWG Obfuscation Parameters</FormHeading>
-        <FormNumberField
-          id="jc"
-          v-model="data.jc"
-          label="Junk packet count (Jc)"
-          description="Number of junk packets to send (1-128, recommended: 4-12)"
+      <FormGroup v-if="globalStore.information?.isAwg">
+        <FormHeading>{{ $t('awg.obfuscationParameters') }}</FormHeading>
+
+        <FormNullNumberField
+          id="jC"
+          v-model="data.jC"
+          :label="$t('awg.jCLabel')"
+          :description="$t('awg.jCDescription')"
         />
-        <FormNumberField
-          id="jmin"
-          v-model="data.jmin"
-          label="Junk packet min size (Jmin)"
-          description="Min junk packet size in bytes (0-1279, recommended: 8, must be < Jmax)"
+        <FormNullNumberField
+          id="jMin"
+          v-model="data.jMin"
+          :label="$t('awg.jMinLabel')"
+          :description="$t('awg.jMinDescription')"
         />
-        <FormNumberField
-          id="jmax"
-          v-model="data.jmax"
-          label="Junk packet max size (Jmax)"
-          description="Max junk packet size in bytes (1-1280, recommended: 80, must be > Jmin)"
+        <FormNullNumberField
+          id="jMax"
+          v-model="data.jMax"
+          :label="$t('awg.jMaxLabel')"
+          :description="$t('awg.jMaxDescription')"
         />
-        <FormNumberField
+        <FormNullNumberField
           id="s1"
           v-model="data.s1"
-          label="Init header junk size (S1)"
-          description="Init packet junk size in bytes (0-1132, recommended: 15-150, S1+56 ≠ S2)"
+          :label="$t('awg.s1Label')"
+          :description="$t('awg.s1Description')"
         />
-        <FormNumberField
+        <FormNullNumberField
           id="s2"
           v-model="data.s2"
-          label="Response header junk size (S2)"
-          description="Response packet junk size in bytes (0-1188, recommended: 15-150)"
+          :label="$t('awg.s2Label')"
+          :description="$t('awg.s2Description')"
         />
-        <FormNumberField
-          id="h1"
-          v-model="data.h1"
-          label="Init magic header (H1)"
-          description="Init packet header value (>4, must be unique from H2-H4)"
-        />
-        <FormNumberField
-          id="h2"
-          v-model="data.h2"
-          label="Response magic header (H2)"
-          description="Response packet header value (>4, must be unique from H1,H3,H4)"
-        />
-        <FormNumberField
-          id="h3"
-          v-model="data.h3"
-          label="Cookie magic header (H3)"
-          description="Cookie packet header value (>4, must be unique from H1,H2,H4)"
-        />
-        <FormNumberField
-          id="h4"
-          v-model="data.h4"
-          label="Transport magic header (H4)"
-          description="Transport packet header value (>4, must be unique from H1-H3)"
-        />
-        <FormNumberField
+
+        <div class="col-span-full text-sm">* {{ $t('awg.mtuNote') }}</div>
+
+        <FormNullNumberField
           id="s3"
           v-model="data.s3"
-          label="Cookie header junk size (S3)"
-          description="Cookie packet junk size in bytes (0-1132)"
+          :label="$t('awg.s3Label')"
+          :description="$t('awg.s3Description')"
         />
-        <FormNumberField
+        <FormNullNumberField
           id="s4"
           v-model="data.s4"
-          label="Transport header junk size (S4)"
-          description="Transport packet junk size in bytes (0-1188)"
+          :label="$t('awg.s4Label')"
+          :description="$t('awg.s4Description')"
         />
-        <FormTextField
+        <FormNullTextField
+          id="h1"
+          v-model="data.h1"
+          :label="$t('awg.h1Label')"
+          :description="$t('awg.h1Description')"
+        />
+        <FormNullTextField
+          id="h2"
+          v-model="data.h2"
+          :label="$t('awg.h2Label')"
+          :description="$t('awg.h2Description')"
+        />
+        <FormNullTextField
+          id="h3"
+          v-model="data.h3"
+          :label="$t('awg.h3Label')"
+          :description="$t('awg.h3Description')"
+        />
+        <FormNullTextField
+          id="h4"
+          v-model="data.h4"
+          :label="$t('awg.h4Label')"
+          :description="$t('awg.h4Description')"
+        />
+        <FormNullTextField
           id="i1"
           v-model="data.i1"
-          label="Special junk packet 1 (I1)"
-          description="Protocol mimic packet in hex format: <b 0x...> (QUIC default)"
+          :label="$t('awg.i1Label')"
+          :description="$t('awg.i1Description')"
         />
-        <FormTextField
+        <FormNullTextField
           id="i2"
           v-model="data.i2"
-          label="Special junk packet 2 (I2)"
-          description="Additional special packet (optional)"
+          :label="$t('awg.i2Label')"
+          :description="$t('awg.i2Description')"
         />
-        <FormTextField
+        <FormNullTextField
           id="i3"
           v-model="data.i3"
-          label="Special junk packet 3 (I3)"
-          description="Additional special packet (optional)"
+          :label="$t('awg.i3Label')"
+          :description="$t('awg.i3Description')"
         />
-        <FormTextField
+        <FormNullTextField
           id="i4"
           v-model="data.i4"
-          label="Special junk packet 4 (I4)"
-          description="Additional special packet (optional)"
+          :label="$t('awg.i4Label')"
+          :description="$t('awg.i4Description')"
         />
-        <FormTextField
+        <FormNullTextField
           id="i5"
           v-model="data.i5"
-          label="Special junk packet 5 (I5)"
-          description="Additional special packet (optional)"
+          :label="$t('awg.i5Label')"
+          :description="$t('awg.i5Description')"
         />
-        <FormTextField
-          id="j1"
-          v-model="data.j1"
-          label="Junk packet schedule 1 (J1)"
-          description="Scheduling parameter (optional)"
-        />
-        <FormTextField
-          id="j2"
-          v-model="data.j2"
-          label="Junk packet schedule 2 (J2)"
-          description="Scheduling parameter (optional)"
-        />
-        <FormTextField
-          id="j3"
-          v-model="data.j3"
-          label="Junk packet schedule 3 (J3)"
-          description="Scheduling parameter (optional)"
-        />
-        <FormNumberField
-          id="itime"
-          v-model="data.itime"
-          label="Interval time (Itime)"
-          description="Interval time parameter in seconds (0-2147483647, Windows: must be 0)"
+      </FormGroup>
+      <FormGroup>
+        <FormHeading>{{ $t('admin.interface.firewall') }}</FormHeading>
+        <FormSwitchField
+          id="firewallEnabled"
+          v-model="data.firewallEnabled"
+          :label="$t('admin.interface.firewallEnabled')"
+          :description="$t('admin.interface.firewallEnabledDesc')"
         />
       </FormGroup>
       <FormGroup>
@@ -184,6 +165,8 @@
 </template>
 
 <script setup lang="ts">
+const globalStore = useGlobalStore();
+
 const { t } = useI18n();
 
 const { data: _data, refresh } = await useFetch(`/api/admin/interface`, {
@@ -197,7 +180,15 @@ const _submit = useSubmit(
   {
     method: 'post',
   },
-  { revert }
+  {
+    revert: async (success) => {
+      await revert();
+      if (success) {
+        // Refresh global store information after successful save
+        await globalStore.refreshInformation();
+      }
+    },
+  }
 );
 
 function submit() {

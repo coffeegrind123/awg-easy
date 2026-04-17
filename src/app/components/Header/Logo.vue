@@ -1,6 +1,6 @@
 <template>
-  <NuxtLink to="/" class="mb-4">
-    <h1 :class="amneziaTheme.getThemeClass('text-4xl font-medium dark:text-neutral-200').value">
+  <NuxtLink to="/" class="max-sm:mb-4">
+    <h1 class="text-4xl font-medium dark:text-neutral-200">
       <img
         :src="amneziaTheme.logoPath.value"
         width="32"

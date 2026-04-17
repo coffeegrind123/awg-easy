@@ -2,7 +2,9 @@
   <main>
     <Panel>
       <PanelHead>
-        <PanelHeadTitle :text="$t('pages.me')" />
+        <PanelHeadTitle>
+          {{ $t('pages.me') }}
+        </PanelHeadTitle>
       </PanelHead>
       <PanelBody class="dark:text-neutral-200">
         <FormElement @submit.prevent="submit">
@@ -120,7 +122,6 @@
 import { encodeQR } from 'qr';
 
 const authStore = useAuthStore();
-authStore.update();
 
 const name = ref(authStore.userData?.name);
 const email = ref(authStore.userData?.email);
